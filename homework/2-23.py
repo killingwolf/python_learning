@@ -3,8 +3,8 @@
 # Author: killingwolf
 # Email: killingwolf@qq.com
 
-def main():
-    """ dict key value revese
+def tr(srcstr, dststr, string):
+    """ linux tr
     """
 
     dict1 = {
@@ -23,4 +23,4 @@ def main():
     
 
 if __name__ == "__main__":
-        main()
+        tr()
