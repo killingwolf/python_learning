@@ -1,14 +1,14 @@
 #!/usr/bin/python
-#coding:utf-8
+# coding:utf-8
 
 
 def main(number):
-    """ 数字转化为英文单词 
+    """ 数字转化为英文单词
     """
-    l1 = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 
+    l1 = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
           'eight', 'nine']
     number = str(number)
-    l2 = [] 
+    l2 = []
     for i in number:
         i = int(i)
         l2.append(l1[i])

@@ -1,11 +1,14 @@
 #!/usr/bin/python
-#coding:utf-8
+# coding:utf-8
+
 
 def my_strip(string):
     """去除字符串首尾空格
     """
 
+    # The space numbers in the head of the string.
     h = 0
+    # The space numbers in the head of the string.
     t = 0
     for i in string:
         if i != ' ':

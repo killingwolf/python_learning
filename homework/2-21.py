@@ -3,6 +3,7 @@
 # Author: killingwolf
 # Email: killingwolf@qq.com
 
+
 def main():
     """ combine list to dict
     """
@@ -12,5 +13,4 @@ def main():
     print dict1
 
 if __name__ == "__main__":
-        main()
-
+    main()

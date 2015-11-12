@@ -3,15 +3,16 @@
 # Author: killingwolf
 # Email: killingwolf@qq.com
 
+
 def main():
     """ dict operation
     """
     dict1 = {
-        'ak' : 'av',
-        'dk' : 'dv',
-        'ck' : 'cv',
-        '1k' : '1v',
-        'bk' : 0
+        'ak': 'av',
+        'dk': 'dv',
+        'ck': 'cv',
+        '1k': '1v',
+        'bk': 0
     }
     for key in sorted(dict1):
         print key
@@ -24,5 +25,4 @@ def main():
 
 
 if __name__ == "__main__":
-        main()
-
+    main()
