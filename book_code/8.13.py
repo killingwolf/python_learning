@@ -17,18 +17,18 @@ def time_me(fn):
 
 @time_me
 def time_list(data):
-    return len([word for line in data for word in line.split()])
+    print len([word for line in data for word in line.split()])
 
 
 @time_me
 def time_gen(data):
-    return len([word for line in data for word in line.split()])
+    print len([word for line in data for word in line.split()])
 
 
 if __name__ == '__main__':
     ff = r'C:/Users/zhanghengfeng/Desktop/messages'
     data = open(ff, 'r')
-    print time_list(data)
+    time_list(data)
     data = open(ff, 'r')
     ff = r'C:/Users/zhanghengfeng/Desktop/messages'
-    print time_gen(data)
+    time_gen(data)

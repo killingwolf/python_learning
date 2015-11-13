@@ -1,22 +1,22 @@
 #!/usr/bin/python
-#coding:utf-8
+# coding:utf-8
 
 
 def main(numb=5):
     """计算连续整数和
-    
+
     """
 
-    for i in xrange(1,numb+1):
+    for i in xrange(1, numb + 1):
         sum = 0
         s = ''
-        for j in xrange(1,i+1):
+        for j in xrange(1, i + 1):
             sum = sum + j
             if i != j:
-                s = s + str(j)+'+'
+                s = s + str(j) + '+'
             else:
                 s = s + str(j)
-        print s,"=",sum    
+        print s, "=", sum
 
 
 if __name__ == "__main__":
