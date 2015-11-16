@@ -6,10 +6,13 @@
     dfadfadfa
 """
 
-def main():
-    print "#" * 80
-    if 'xxxx' == 'xxxxx':
-        pass
 
+def main():
+    def foo():
+        print "foo() called"
+    print "main() called"
+    foo()
+    # main()
+    # foo()
 if __name__ == '__main__':
     main()

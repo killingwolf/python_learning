@@ -30,5 +30,5 @@ def tr(srcstr, dststr, string, sensitive=False):
 if __name__ == "__main__":
     srcstr = 'ABC'
     dststr = 'mon'
-    string = 'abcdef'
+    string = 'abcdeF'
     print tr(srcstr, dststr, string, False)
