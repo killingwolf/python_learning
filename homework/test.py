@@ -6,13 +6,21 @@
     dfadfadfa
 """
 
+a = 10
+
 
 def main():
-    def foo():
-        print "foo() called"
-    print "main() called"
-    foo()
-    # main()
-    # foo()
+    global a
+    print "global a is :%s" % a
+    a = 200
+    print "local a is :%s" % a
+    b = 300
+    print "local b is :%s" % b
+
+
 if __name__ == '__main__':
+    a = 10
+    b = 20
     main()
+    print "####%s####" % a
+    print "####%s####" % b
