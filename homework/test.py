@@ -6,21 +6,20 @@
     dfadfadfa
 """
 
-a = 10
+
+class test(Exception):
+    print "xx oo xx"
 
 
 def main():
-    global a
-    print "global a is :%s" % a
-    a = 200
-    print "local a is :%s" % a
-    b = 300
-    print "local b is :%s" % b
-
+    raise test, ((1, 2, 3),)
 
 if __name__ == '__main__':
-    a = 10
-    b = 20
-    main()
-    print "####%s####" % a
-    print "####%s####" % b
+    try:
+        main()
+    except Exception, e:
+        print e
+    else:
+        pass
+    finally:
+        pass
