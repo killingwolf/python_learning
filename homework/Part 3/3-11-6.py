@@ -4,8 +4,13 @@
 # @Author  : killingwolf (killingwolf@qq.com)
 
 
-def printf():
-    pass
+def printf(fstring, *args):
+    return [(fstring % arg) for arg in args]
+
 
 if __name__ == '__main__':
-    pass
+    fsting = '%s'
+    str1 = 'xxxx'
+    str2 = 1234
+    for i in printf(fsting, str1, str2):
+        print i

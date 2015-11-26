@@ -10,13 +10,15 @@ def count_ip_func(f):
             print i
 
 
-def count_ip_gen(f):
+def gener(f):
     with open(f, 'r') as rfd:
-        ip = set()
-        for i in (line.split()[0] for line in rfd):
-            ip.add(i)
-        for i in ip:
-            print i
+        for line in rfd:
+            yield line.split()[0]
+
+
+def count_ip_gen(f):
+    for i in set([line for line in gener(f)]):
+        print i
 
 
 if __name__ == '__main__':
