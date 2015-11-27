@@ -3,6 +3,12 @@
 # @Date    : 2015-11-26 19:15:50
 # @Author  : killingwolf (killingwolf@qq.com)
 
+import sys
+
+# reload(sys)
+
+# sys.setdefaultencoding('utf8')
+
 
 def print_string():
     try:
@@ -23,6 +29,7 @@ def print_string():
         return True
     except BaseException, e:
         print e
+
 
 if __name__ == '__main__':
     print_string()

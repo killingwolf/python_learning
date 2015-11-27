@@ -3,6 +3,8 @@
 # @Date    : 2015-11-26 19:00:59
 # @Author  : killingwolf (killingwolf@qq.com)
 
+import time
+
 
 def fibonacci(n):
     if n <= 2:
@@ -12,5 +14,21 @@ def fibonacci(n):
 
     return rt
 
+
+def fabonacci_v2(n):
+    """ fibonacci without Recursion """
+    k = j = 1
+    if n <= 2:
+        rt = 1
+    else:
+        for i in xrange(n):
+            if i == n - 1:
+                rt = j
+            j, k = k, k + j
+
+    return rt
+
+
 if __name__ == '__main__':
-    print fibonacci(10)
+    print fabonacci_v2(10)
+    print fibonacci(5)
