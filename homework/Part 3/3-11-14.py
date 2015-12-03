@@ -7,6 +7,7 @@ import time
 
 
 def fibonacci(n):
+    """ fibonacci with Recursion """
     if n <= 2:
         rt = 1
     else:
@@ -30,5 +31,5 @@ def fabonacci_v2(n):
 
 
 if __name__ == '__main__':
-    print fabonacci_v2(10)
+    # print fabonacci_v2(10)
     print fibonacci(5)

@@ -7,14 +7,6 @@
 x = 10
 
 
-def foo():
-    y = 5
-    bar = lambda: x + y
-    print bar()
-    y = 10
-    print bar()
-
-
 class MyClass(object):
 
     """docstring for MyClass"""
@@ -23,6 +15,25 @@ class MyClass(object):
     def b(self):
         self.a[0] += 1
         print self.a[0]
+
+
+class C(object):
+
+    "A test class"
+
+    def __init__(self):
+        print "init"
+
+    def __del__(self):
+        print 'deleted'
+
+
+def foo():
+    y = 5
+    bar = lambda: x + y
+    print bar()
+    y = 10
+    print bar()
 
 
 def factorial(n):
@@ -39,21 +50,8 @@ def gen(n):
 
 
 if __name__ == '__main__':
-    # bb = MyClass()
-    # bb.b()
-    # bb.b()
-    # bb.b()
-    # del bb
-    # print factorial(5)
-    g1 = gen(1)
-    g2 = gen(4)
-    g3 = gen(1000)
-    # g1.close()
-    print g1.next()
-    g1.send(10)
-    print g1.next()
-    g1.send(10)
-    print g1.next()
-    # print g1.next(), g2.next(), g3.next()
-    # print g1.next(), g2.next(), g3.next()
-    # print g1.next(), g2.next(), g3.next()
+    c1 = C()
+    c3 = c2 = c1
+    del c1
+    del c2
+    del c3

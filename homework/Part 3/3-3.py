@@ -5,8 +5,11 @@
 
 import re
 
+from string import punctuation
+
 
 def word_count(f, sensitive=True):
+    """ word statistics with RE """
     with open(f, 'r') as f:
         # A RE to replace all punctuation except '-'.
         re1 = r'[^\w\-\s]'
@@ -25,10 +28,29 @@ def word_count(f, sensitive=True):
 
     return kwords
 
+
+def word_count_v2(f, sensitive=True):
+    """ word statistics with string.punctuation """
+    with open(f, 'r') as f:
+        kwords = {}
+        words = (word.translate(None, punctuation) for line in f for word
+                 in line.split() if word.translate(None, punctuation))
+        for word in words:
+            if not sensitive:
+                word = word.lower()
+            if word in kwords:
+                kwords[word] += 1
+            else:
+                kwords[word] = 1
+
+    return kwords
+
+
 if __name__ == '__main__':
     f = 'gettysburg.txt'
     try:
-        kwords = word_count(f)
+        # kwords = word_count(f)
+        kwords = word_count_v2(f)
         # unrpt = [i for i in kwords if kwords[i] == 1]
         # print "Non-repetitive words:%s \n count：%d" % (unrpt, len(unrpt))
         print "Non-repetitive words"
