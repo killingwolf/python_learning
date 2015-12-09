@@ -128,8 +128,31 @@ class C2(P1, P2):
 class GC(C1, C2):
     pass
 
+
+class RoundFloatManual(object):
+
+    def __init__(self, val):
+        assert isinstance(val, float), 'Value must be a fload!'
+        self.value = round(val, 2)
+
+    def __str__(self):
+        return str(self.value)
+
+
+class Person(object):
+
+    """ Person class"""
+    age = 18
+
+    def study(self):
+        print "you can go to college"
+
+    def Love(object):
+        print "You are 18 years old ,you can ML now!"
+
+
 if __name__ == '__main__':
-    gc = GC()
-    gc.foo()
-    gc.bar()
-    print issubclass(GC, C1)
+    p = Person()
+    print p.age
+    p.study()
+    p.Love()
