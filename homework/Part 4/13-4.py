@@ -13,6 +13,7 @@ class UserData(object):
 
     def __init__(self, user_data_file='userdata.txt'):
         self.timestamp = time.time()
+        # self.data = shelve.open(user_data_file, writeback=True)
         self.data = shelve.open(user_data_file)
 
     def user_check(self, user):
