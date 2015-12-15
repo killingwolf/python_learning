@@ -17,7 +17,7 @@ class UserData(object):
         self.data = shelve.open(user_data_file)
 
     def user_check(self, user):
-        'check if the user is exist'
+        '''check if the user is exist'''
         rt = True if user in self.data else False
         return rt
 

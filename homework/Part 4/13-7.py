@@ -19,7 +19,9 @@ class Date(object):
     def __init__(self, date=None):
         self.date = date if date else time.time()
 
-    update = __init__
+    # update = __init__
+    def update(self, date=None):
+        self.date = date if date else time.time()
 
     def display(self, fmt=None):
         if fmt:
