@@ -9,11 +9,10 @@ from sys import maxint
 from time import ctime
 
 
-if __name__ == '__main__':
-
+def create_redata(redata):
     doms = ('com', 'edu', 'net', 'org', 'gov')
 
-    with open('redata.txt', 'w+') as wfd:
+    with open(redata, 'w+') as wfd:
         for i in range(randint(5, 10)):
             dtint = randint(0, maxint - 1)  # pick date
             dtstr = ctime(dtint)        # date string
@@ -36,3 +35,6 @@ if __name__ == '__main__':
                 shorter,
                 longer)
             )
+
+if __name__ == '__main__':
+    create_redata('redata.txt')

@@ -4,7 +4,7 @@
 # @Author  : killingwolf (killingwolf@qq.com)
 
 
-def myopen(fname, mode):
+def my_open(fname, mode):
     try:
         return open(fname, mode)
     except BaseException:
@@ -12,6 +12,6 @@ def myopen(fname, mode):
 
 if __name__ == '__main__':
     # open an exist file
-    print myopen('10-6.py', 'r')
+    print my_open('10-6.py', 'r')
     # open an not exist file
-    print myopen('xxxx', 'r')
+    print my_open('xxxx', 'r')
