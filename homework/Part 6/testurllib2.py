@@ -12,6 +12,3 @@ if code in zh_code:
     print html.decode('GBK').encode('utf-8')
 else:
     print html
-
-if __name__ == '__main__':
-    pass

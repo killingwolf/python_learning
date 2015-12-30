@@ -8,7 +8,6 @@ from time import sleep
 from random import choice
 import chardet
 
-
 def get_keyword_from_360(word, useagent=False):
     kword = urllib2.quote(word)
     agent = ['http://113.31.80.194:8080', 'http://60.195.250.55:80']
@@ -25,18 +24,20 @@ def get_keyword_from_360(word, useagent=False):
         opener = urllib2.build_opener(proxy_handler)
         urllib2.install_opener(opener)
     req = urllib2.Request(url, headers=headers)
-    # rt = urllib2.urlopen(req).read().decode('GBK').encode('utf-8')
-    rt = urllib2.urlopen(req).read()
+    rt = urllib2.urlopen(req, timeout=60).read()
     return rt
 
 if __name__ == '__main__':
-    words = ['科技', 'nihao', 'python']
+    words = ['科技', 'nihao']
     for word in words:
-        # str1 = get_keyword_from_360(word, 1)
         str1 = get_keyword_from_360(word)
-        # print chardet.detect(str1)
-        print '#' * 79
-        ss = re.findall(r'"word":"(.*?)"', str1, re.X)
-        for i in ss:
-            print i
-        sleep(5)
+
+        zh_code = ['GBK', 'gb2312', 'GB2312']
+        if chardet.detect(str1)['encoding'] in zh_code:
+            print '#' * 79
+            str1 = str1.decode('GBK').encode('utf-8')
+            ss = re.findall(r'"word":"(.*?)"', str1)
+            # print
+            for i in ss:
+                print i
+        # sleep(5)
