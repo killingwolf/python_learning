@@ -26,12 +26,14 @@ class BaiDu(object):
 
     def get_html(self):
 
-        if self.agents:
-            agent = choice(self.agents)
-
         # add cookile support
         cookie = cookielib.CookieJar()
         cookie_handler = urllib2.HTTPCookieProcessor(cookie)
+
+        if self.agents:
+            agent = choice(self.agents)
+        else:
+            agent = None
 
         # add agent support
         if agent:
@@ -56,11 +58,12 @@ class BaiDu(object):
         except Exception as e:
             raise Exception(e)
 
-    def get_keyword(self):
+    def get_keyword(self, pt):
         words = []
         datas = self.get_html()
+
         for data in datas:
-            words += re.findall(r's:\[|,"(.*?)"', data)
+            words += re.findall(pt, data)
         return words
 
 if __name__ == '__main__':
@@ -74,6 +77,7 @@ if __name__ == '__main__':
     refer_url = 'https://www.baidu.com/'
     agents = ['http://113.31.80.194:8080', 'http://60.195.250.55:80']
     bd = BaiDu(host, get_urls, refer_url, agents)
+    pt = r's:\[|,"(.*?)"'
     # bd.get_html()
-    for word in bd.get_keyword():
+    for word in bd.get_keyword(pt):
         print word
