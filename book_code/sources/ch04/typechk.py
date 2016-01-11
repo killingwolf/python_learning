@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 def displayNumType(num):
     print num, 'is',
     if isinstance(num, (int, long, float, complex)):

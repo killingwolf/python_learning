@@ -4,9 +4,10 @@
 # @Author  : killingwolf (killingwolf@qq.com)
 import urllib2
 import re
-from time import sleep
+# from time import sleep
 from random import choice
 import chardet
+
 
 def get_keyword_from_360(word, useagent=False):
     kword = urllib2.quote(word)

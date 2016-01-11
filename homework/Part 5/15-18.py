@@ -33,7 +33,7 @@ def data_corruption_check(datafile):
             (\d{4}))::
             ([a-z]+@[a-z]+\.(com|edu|net|org|gov))::
             ((\d+)-\d-\d)
-        '''
+    '''
         for line in rfd:
             match = re.search(pt, line, re.X)
             if match:

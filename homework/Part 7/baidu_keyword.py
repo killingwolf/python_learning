@@ -10,7 +10,14 @@ from random import choice
 
 
 class BaiDu(object):
+    """Get data from get_urls
 
+    Attributes:
+        host: host in http header
+        get_urls: a list of url to get data from.
+        refer_url: Referer in http header
+        agents: http agent
+    """
     zh_code = ['GBK', 'gb2312', 'GB2312']
 
     def __init__(self, host, get_urls, refer_url, agents=[]):
