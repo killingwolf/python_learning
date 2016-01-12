@@ -3,25 +3,22 @@
 # @Date    : 2016/1/11 11:45
 # @Author  : killingwolf (killingwolf@qq.com)
 
+import threading
 
-def test():
-    print '你好'
+def worker():
+    print threading.current_thread().getName()
+    print 'worker'
 
+for i in range(5):
+    t = threading.Thread(target=worker)
+    t.start()
 
-def test2():
-    pass
+t1 = threading.Thread(target=worker, name='###########')
+t2 = threading.Thread(target=worker)
+t3 = threading.Thread(target=worker)
 
-
-class MyClass(object):
-
-    def test(self):
-        pass
-    pass
-
-
-class MyClass2(object):
-   pass
+t1.start()
+t2.start()
+t3.start()
 if __name__ == '__main__':
-    print '#' * 80
-
-################################################################################
+    pass
