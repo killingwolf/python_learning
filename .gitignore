@@ -15,8 +15,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-.idea/
-*/workspace.xml
+.idea/*.xml
+*workspace.xml
 lib/
 lib64/
 parts/
