@@ -1,0 +1,19 @@
+$def with (todos)
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Date</th>
+  </tr>
+$for todo in todos:
+  <tr>
+    <td>$todo.title</td>
+    <td>$todo.content</td>
+    <td>$todo.posted_on</td>
+  </tr>
+</table>
+<form method="post" action="add">
+    <p><input type="text" name="title" /></p>
+    <p><input type="text" name="content" /></p>
+    <p><input type="submit" value="Add" /></p>
+</form>

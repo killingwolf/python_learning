@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS addressbook DEFAULT CHARACTER SET utf8;
+USE addressbook;
+DROP TABLE IF EXISTS `address`;
+CREATE TABLE `address` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `address` longtext,
+  `tel` varchar(0) NOT NULL,
+  `update_at` datetime DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;

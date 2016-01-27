@@ -1,0 +1,20 @@
+$def with (items)
+<table border="1">
+<tr>
+  <th>姓名</th>
+  <th>住址</th>
+  <th>电话</th>
+  <th>编辑</th>
+  <th>删除</th>
+</tr>
+$for post in items:
+    <tr>
+        <td>$post.name</td>
+        <td>$post.address</td>
+        <td>$post.tel</td>
+        <td><a href="/edit/$post.id">编辑</a></td>
+        <td><form action="/delete/$post.id" method="post">
+            <input type="submit" value="删除"/>
+        </form></td>
+    </tr>
+</table>
