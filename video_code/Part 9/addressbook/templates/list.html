@@ -13,8 +13,10 @@ $for post in items:
         <td>$post.address</td>
         <td>$post.tel</td>
         <td><a href="/edit/$post.id">编辑</a></td>
-        <td><form action="/delete/$post.id" method="post">
-            <input type="submit" value="删除"/>
-        </form></td>
+        <td>
+            <form action="/delete/$post.id" method="post">
+                <input type="submit" value="删除"/>
+            </form>
+        </td>
     </tr>
 </table>
