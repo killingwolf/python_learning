@@ -37,3 +37,11 @@ def del_item(id):
 def update_item(id, name, address, tel):
     db.update(TB, where="id=$id", vars=locals(), name=name,
               address=address, tel=tel)
+
+
+def search_item(name):
+    name = '%' + name + '%'
+    try:
+        return db.select(TB, where="name like $name", vars=locals())
+    except IndexError:
+        return None

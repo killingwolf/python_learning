@@ -5,7 +5,7 @@ CREATE TABLE `address` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `address` longtext,
-  `tel` varchar(0) NOT NULL,
+  `tel` varchar(11) NOT NULL,
   `update_at` datetime DEFAULT NULL,
   `create_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)

@@ -23,7 +23,9 @@ t_globals = {
 render = web.template.render('templates', base='base', globals=t_globals)
 # render = web.template.render('templates', globals={})
 
+
 class Index:
+    '''主页'''
 
     def GET(self):
         """ Show page """
@@ -31,18 +33,18 @@ class Index:
 
 
 class Add(object):
-
+    '''添加联系人'''
     form = web.form.Form(
         web.form.Textbox('name', web.form.notnull,
                          size=30,
                          description="姓名："),
         web.form.Textarea('address', web.form.notnull,
-                         rows=2, cols=32,
-                         description="地址："),
+                          rows=2, cols=32,
+                          description="地址："),
         web.form.Textbox('tel', web.form.notnull,
                          size=30,
                          description="电话："),
-        web.form.Button('Add'),
+        web.form.Button('commit'),
     )
 
     def GET(self):
@@ -56,33 +58,38 @@ class Add(object):
         module.add_item(form.d.name, form.d.address, form.d.tel)
         raise web.seeother('/view')
 
+
 class Delete(object):
+    '''删除联系人'''
+
     def POST(self, id):
         module.del_item(int(id))
         raise web.seeother('/view')
 
+
 class Search(object):
+    '''查找联系人'''
     form = web.form.Form(
-        web.form.Dropdown(None, [
-            ('name', '姓名'),
-            ('address', '地址'),
-            ('tel', '电话' )]),
         web.form.Textbox('name', web.form.notnull,
                          size=30,
                          description="姓名："),
-        web.form.Textarea('address', web.form.notnull,
-                         rows=2, cols=32,
-                         description="地址："),
-        web.form.Textbox('tel', web.form.notnull,
-                         size=30,
-                         description="电话："),
         web.form.Button('Search'),
     )
+
     def GET(self):
         """ Search item """
         return render.search(self.form)
 
+    def POST(self):
+        form = self.form()
+        if not form.validates():
+            return render.search(form)
+        item = module.search_item(form.d.name)
+        return render.list(item)
+
+
 class Edit(object):
+    '''编辑联系人'''
 
     def GET(self, id):
         post = module.get_item(int(id))
@@ -100,7 +107,10 @@ class Edit(object):
         module.update_item(id, form.d.name, form.d.address, form.d.tel)
         raise web.seeother('/view')
 
+
 class View(object):
+    '''列出所有联系人'''
+
     def GET(self):
         """ Show page """
         items = module.get_items()
